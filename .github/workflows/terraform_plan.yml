@@ -11,4 +11,4 @@ jobs:
       - name: "Trying to run muskteers"
         uses:  docker://dnxsolutions/musketeers:1.1.0 
         with:
-          args: make
+          args: make envfile
