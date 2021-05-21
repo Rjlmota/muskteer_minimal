@@ -1,0 +1,28 @@
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Define user (shared, prod, nonprod)'     
+        required: true
+        default: 'prod'
+
+name: Apply changes with Terraform
+
+jobs:     
+
+  terraform_setup:  
+    name: Prepare Terraform execution
+    # needs: aws_auth
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v1
+      with: 
+         terraform_version: 0.14.5
+
+  terraform_apply:
+    name: "Trying to run Muskteers"
+    uses: dnxsolutions/musketeers:1.1.0
+    with:
+      args: make
