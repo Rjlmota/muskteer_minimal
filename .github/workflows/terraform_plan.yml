@@ -6,7 +6,7 @@ name: Change infrastructure with Terraform
 jobs:
   muskteers:
     name: Muskteers
-
+    runs-on: ubuntu-latest
     steps:
       - name: "Trying to run muskteers"
         uses: dnxsolutions/musketeers:1.1.0
