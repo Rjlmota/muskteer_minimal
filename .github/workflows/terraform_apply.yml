@@ -20,9 +20,3 @@ jobs:
       uses: hashicorp/setup-terraform@v1
       with: 
          terraform_version: 0.14.5
-
-  terraform_apply:
-    name: "Trying to run Muskteers"
-    uses: dnxsolutions/musketeers:1.1.0
-    with:
-      args: make
